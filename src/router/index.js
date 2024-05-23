@@ -13,8 +13,8 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path:'/home',
-      name:'home-2',
+      path: '/home',
+      name: 'home-2',
       component: HomeView
     },
     {
@@ -22,11 +22,11 @@ const router = createRouter({
       name:'login',
       component: Login
     },
-    
-      /// path:'/register',
-      /// name:'register',
-      /// component: Register
-
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('../views/dashboard.vue')
+    },
     {
       path: '/:catchAll(.*)',
       name: '404',
