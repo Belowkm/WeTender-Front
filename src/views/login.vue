@@ -1,20 +1,21 @@
-import Head from './head.vue';
 <template>
     <div class="login">
-        <h2>WeTender</h2>
-        <form @submit.prevent="handleSubmit">
-            <label for="username">用户名</label>
-            <input id="text" v-model="username" required />
-            <br>
-            <label for="password">密码</label>
-            <input type="password" v-model="password" required />
-            <br>
-            <button type="submit" @click="login">登录</button>
-            <button type="button" @click="register">注册</button>
-        </form>
-    </div>
-    <div class="head">
-        <Head />
+        <el-form :model="loginForm" :rules="rules" ref="loginForm" label-position="left" label-width="0px"
+            class="demo-ruleForm login-container">
+            <h3 class="title">WeTender</h3>
+            <el-form-item prop="username">
+                <el-input type="text" v-model="username" auto-complete="off" placeholder="用户名"></el-input>
+            </el-form-item>
+            <el-form-item prop="password">
+                <el-input type="password" v-model="password" auto-complete="off" placeholder="密码"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" style="width:100%;" @click.native.prevent="login">登录</el-button>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="info" style="width:100%;" @click.native.prevent="register">注册</el-button>
+            </el-form-item>
+        </el-form>
     </div>
 </template>
 <script>
@@ -46,62 +47,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-.login {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f8f8f8;
-    box-sizing: border-box;
-    margin-top: 100px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    outline: none;
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-</style>
