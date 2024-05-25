@@ -13,7 +13,10 @@
                 <el-button type="primary" style="width:100%;" @click.native.prevent="login">登录</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="info" style="width:100%;" @click.native.prevent="register">注册</el-button>
+                <el-button type="text" @click="goToHome">返回首页</el-button>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="text" @click="register">注册</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -43,7 +46,45 @@ export default {
         },
         register() {
             this.$router.push('/register');
+        },
+        goToHome() {
+            this.$router.push('/home');
         }
     }
 }
 </script>
+<style lang="scss" scoped>
+.login {
+    height: 100%;
+}
+
+.login-container {
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.title {
+    margin: 0px auto 40px auto;
+    text-align: center;
+    color: #505458;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+.login-container {
+    background-color: #fff;
+    border-radius: 5px;
+}
+</style>
