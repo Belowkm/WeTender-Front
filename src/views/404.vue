@@ -16,12 +16,6 @@
                 </div>
             </div>
         </div>
-        <div class="not-found-footer">
-            <div class="not-found-footer-text">
-                Copyright © 2024 <span><a href="https://github.com/Belowkm/WeTender-Front"
-                        target="_blank">WeTender团队</a></span> 版权所有
-            </div>
-        </div>
     </div>
 </template>
 <script lang="ts" setup>

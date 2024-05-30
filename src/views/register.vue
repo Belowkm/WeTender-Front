@@ -27,7 +27,10 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus';
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
-ElMessage.warning('注册功能暂未开发完成，请直接使用仪表盘')
+
+const Msg = '注册功能暂未开发完成，请在主页选择用户使用'
+ElMessage.warning(Msg)
+
 const router = useRouter();
 const registerForm = ref({
     username: '',
@@ -84,7 +87,7 @@ const check = () => {
     return false;
 };
 const register = () => {
-    ElMessage.error('注册功能暂未开发完成，请直接使用仪表盘');
+    ElMessage.error(Msg);
     /// if (check()) {
     ///    axios.post('/api/register', {
     ///        username: registerForm.value.username,

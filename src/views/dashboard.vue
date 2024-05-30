@@ -2,29 +2,81 @@
     <el-container class="dashboard">
         <el-aside width="200px">
             <el-menu>
-                <el-menu-item>数据概览</el-menu-item>
                 <el-sub-menu>
                     <template #title>
                         <i class="el-icon-menu"></i>
                         乡级政府界面
                     </template>
+                    <el-menu-item >
+                        <i class="el-icon-menu"></i>
+                        数据概览
+                    </el-menu-item>
                     <el-menu-item>
                         <i class="el-icon-menu"></i>
-                        
+                        项目列表
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        项目管理
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        项目审核
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        数据导出
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        预算管理
                     </el-menu-item>
                 </el-sub-menu>
+            </el-menu>
+
+            <el-menu>
                 <el-sub-menu>
                     <template #title>
                         <i class="el-icon-menu"></i>
                         县级政府界面
                     </template>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        数据概览
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        项目列表
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        项目管理
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        项目审核
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        数据导出
+                    </el-menu-item>
+                    <el-menu-item>
+                        <i class="el-icon-menu"></i>
+                        预算管理
+                    </el-menu-item>
                 </el-sub-menu>
+            </el-menu>
+            
+            <el-menu>
                 <el-sub-menu>
                     <template #title>
                         <i class="el-icon-menu"></i>
                         企业界面
                     </template>
                 </el-sub-menu>
+            </el-menu>
+            
+            <el-menu>
                 <el-sub-menu>
                     <template #title>
                         <i class="el-icon-menu"></i>
@@ -34,7 +86,7 @@
             </el-menu>
         </el-aside>
         <el-main>
-            
+
         </el-main>
     </el-container>
 </template>
