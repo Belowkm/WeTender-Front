@@ -11,17 +11,11 @@
             </transition>
         </div>
     </div>
-    <div>
-        <el-button @click="goToHome">返回首页</el-button>
-    </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 const show = ref(true)
-const goToHome = () => {
-    window.location.href = '/home'
-}
 </script>
 
 <style>

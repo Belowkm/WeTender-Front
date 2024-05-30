@@ -49,7 +49,7 @@ export default {
             this.$router.push('/register');
         },
         goToHome() {
-            this.$router.push('/home');
+            this.$router.push('/');
         },
         forget() {
             this.$router.push('/forget');

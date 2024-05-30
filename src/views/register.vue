@@ -41,11 +41,11 @@ export default {
             registerRules: {
                 username: [
                     { required: true, message: '请输入用户名', trigger: 'blur' },
-                    { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+                    { min: 3, message: '长度至少为 3 个字符', trigger: 'blur' }
                 ],
                 password: [
                     { required: true, message: '请输入密码', trigger: 'blur' },
-                    { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
+                    { min: 5, message: '长度至少 5 个字符', trigger: 'blur' }
                 ],
                 checkPass: [
                     { required: true, message: '请再次输入密码', trigger: 'blur' },
@@ -69,7 +69,7 @@ export default {
             this.$router.push('/login')
         },
         goToHome() {
-            this.$router.push('/home')
+            this.$router.push('/')
         },
         handleClose(done) {
             this.$confirm('确认关闭？')
