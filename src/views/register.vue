@@ -20,66 +20,84 @@
                 <el-button type="text" @click="goToHome">返回首页</el-button>
             </el-form-item>
         </el-form>
-        <el-dialog title="注册成功" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
-            <el-button type="primary" @click="goToLogin">去登录</el-button>
-        </el-dialog>
-        <el-dialog title="注册失败" :visible.sync="dialogVisible2" width="30%" :before-close="handleClose">
-            <el-button type="primary" @click="goToRegister">重新注册</el-button>
-        </el-dialog>
     </div>
 </template>
-<script>
+<script lang="ts" setup>
 import axios from 'axios'
-export default {
-    name: 'Register',
-    data() {
-        return {
-            registerForm: {
-                username: '',
-                password: ''
-            },
-            registerRules: {
-                username: [
-                    { required: true, message: '请输入用户名', trigger: 'blur' },
-                    { min: 3, message: '长度至少为 3 个字符', trigger: 'blur' }
-                ],
-                password: [
-                    { required: true, message: '请输入密码', trigger: 'blur' },
-                    { min: 5, message: '长度至少 5 个字符', trigger: 'blur' }
-                ],
-                checkPass: [
-                    { required: true, message: '请再次输入密码', trigger: 'blur' },
-                    {
-                        validator: (rule, value, callback) => {
-                            if (value !== this.registerForm.password) {
-                                callback(new Error('两次输入密码不一致!'));
-                            } else {
-                                callback();
-                            }
-                        }, trigger: 'blur'
-                    }
-                ]
-            },
-            dialogVisible: false,
-            dialogVisible2: false,
-        }
-    },
-    methods: {
-        goToLogin() {
-            this.$router.push('/login')
-        },
-        goToHome() {
-            this.$router.push('/')
-        },
-        handleClose(done) {
-            this.$confirm('确认关闭？')
-                .then(_ => {
-                    done()
-                })
-                .catch(_ => { })
-        }
+import { ElMessage } from 'element-plus';
+import { useRouter } from 'vue-router';
+import { ref } from 'vue';
+ElMessage.warning('注册功能暂未开发完成，请直接使用仪表盘')
+const router = useRouter();
+const registerForm = ref({
+    username: '',
+    password: '',
+    checkPass: ''
+});
+const registerRules = ref({
+    username: [
+        { required: true, message: '请输入用户名', trigger: 'blur' },
+        { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+    ],
+    password: [
+        { required: true, message: '请输入密码', trigger: 'blur' },
+        { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
+    ],
+    checkPass: [
+        { required: true, message: '请再次输入密码', trigger: 'blur' },
+        { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
+    ]
+});
+const dialogVisible = ref(false);
+const dialogVisible2 = ref(false);
+const goToLogin = () => {
+    router.push('/login');
+};
+const goToHome = () => {
+    router.push('/');
+};
+const checkPass = () => {
+    if (registerForm.value.password !== registerForm.value.checkPass) {
+        ElMessage.error('两次输入密码不一致');
+        return false;
     }
-}
+    return true;
+};
+const checkUsername = () => {
+    if (registerForm.value.username === '') {
+        ElMessage.error('用户名不能为空');
+        return false;
+    }
+    return true;
+};
+const checkPassword = () => {
+    if (registerForm.value.password === '') {
+        ElMessage.error('密码不能为空');
+        return false;
+    }
+    return true;
+};
+const check = () => {
+    if (checkUsername() && checkPassword() && checkPass()) {
+        return true;
+    }
+    return false;
+};
+const register = () => {
+    ElMessage.error('注册功能暂未开发完成，请直接使用仪表盘');
+    /// if (check()) {
+    ///    axios.post('/api/register', {
+    ///        username: registerForm.value.username,
+    ///        password: registerForm.value.password
+    ///    }).then((res) => {
+    ///        if (res.data.code === 200) {
+    ///            dialogVisible.value = true;
+    ///        } else {
+    ///            dialogVisible2.value = true;
+    ///        }
+    ///    });
+    ///}
+};
 </script>
 <style>
 .register-form {
@@ -91,6 +109,7 @@ export default {
     transform: translate(-50%, -50%);
     border-radius: 5px;
 }
+
 .title {
     text-align: center;
     margin-bottom: 20px;
@@ -107,6 +126,7 @@ export default {
     margin-right: 20px;
     border-bottom: 1px solid #eee;
 }
+
 .register {
     margin-top: 100px;
     margin-bottom: 100px;

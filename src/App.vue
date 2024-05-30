@@ -3,7 +3,7 @@
         <el-header class="header">
             <Header />
         </el-header>
-        <el-main>
+        <el-main class="main">
             <router-view />
         </el-main>
         <el-footer class="footer">
@@ -17,7 +17,6 @@ import Footer from './components/Footer.vue';
 </script>
 <style>
 .header {
-    background-color: #fff;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -29,7 +28,6 @@ import Footer from './components/Footer.vue';
     margin: 0 auto;
     overflow: hidden;
 }
-
 .footer {
     position: fixed;
     z-index: 3000;

@@ -22,40 +22,48 @@
         </el-form>
     </div>
 </template>
-<script>
-export default {
-    name: 'login',
-    data() {
-        return {
-            username: '',
-            password: ''
-        }
-    },
-    methods: {
-        login() {
-            console.log(this.username);
-            this.$router.push('/');
-            this.$store.commit('login', this.username);
-            this.$store.commit('setUser', this.username);
-            this.$message({
-                message: '欢迎回来',
-                type: 'success'
-            });
-            this.loginForm.username = '';
-            this.loginForm.password = '';
-            this.loginForm.rememberMe = false;
+<script lang="ts" setup>
+import { ElMessage } from 'element-plus';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+ElMessage.warning('登录功能暂未开发完成，请直接使用仪表盘');
+
+const username = ref('');
+const password = ref('');
+const router = useRouter();
+const login = () => {
+    ElMessage.error('登录功能暂未开发完成，请直接使用仪表盘');
+};
+const goToHome = () => {
+    router.push('/');
+};
+const register = () => {
+    router.push('/register');
+};
+const forget = () => {
+    router.push('/forget');
+};
+const rules = {
+    username: [
+        {
+            required: true,
+            message: '请输入用户名',
+            trigger: 'blur',
         },
-        register() {
-            this.$router.push('/register');
+    ],
+    password: [
+        {
+            required: true,
+            message: '请输入密码',
+            trigger: 'blur',
         },
-        goToHome() {
-            this.$router.push('/');
-        },
-        forget() {
-            this.$router.push('/forget');
-        }
-    }
-}
+    ],
+};
+const loginForm =
+{
+    username: '',
+    password: '',
+};
 </script>
 <style>
 .login-container {

@@ -38,6 +38,11 @@ const router = createRouter({
       component: () => import('../views/about.vue')
     },
     {
+      path:'/dashboads/TownGov',
+      name: 'TownGov',
+      component: () => import('../dashboards/TownGov.vue')
+    },
+    {
       path: '/:catchAll(.*)',
       name: '404',
       component: Error

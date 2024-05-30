@@ -10,5 +10,5 @@ import router from './router/index.js'
 const app = createApp(App)
 
 app.use(router)
-app.use(ElementPlus, {zIndex: 3000 })
+app.use(ElementPlus, { zIndex: 3000 })
 app.mount('#app')
