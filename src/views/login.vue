@@ -13,10 +13,11 @@
                 <el-button type="primary" style="width:100%;" @click.native.prevent="login">登录</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="text" @click="goToHome">返回首页</el-button>
+                <el-button type="text" @click="register">注册</el-button>
+                <el-button type="text" @click="forget">忘记密码</el-button>
             </el-form-item>
             <el-form-item>
-                <el-button type="text" @click="register">注册</el-button>
+                <el-button type="text" @click="goToHome">返回首页</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -33,7 +34,7 @@ export default {
     methods: {
         login() {
             console.log(this.username);
-            this.$router.push('/home');
+            this.$router.push('/');
             this.$store.commit('login', this.username);
             this.$store.commit('setUser', this.username);
             this.$message({
@@ -49,15 +50,14 @@ export default {
         },
         goToHome() {
             this.$router.push('/home');
+        },
+        forget() {
+            this.$router.push('/forget');
         }
     }
 }
 </script>
-<style lang="scss" scoped>
-.login {
-    height: 100%;
-}
-
+<style>
 .login-container {
     position: fixed;
     width: 400px;
@@ -81,10 +81,5 @@ export default {
     padding-bottom: 10px;
     width: 100%;
     height: 40px;
-}
-
-.login-container {
-    background-color: #fff;
-    border-radius: 5px;
 }
 </style>

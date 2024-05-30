@@ -24,21 +24,14 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    name: 'NotFound',
-    methods: {
-        goToHome() {
-            this.$router.push('/home')
-        }
-    }
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const goToHome = () => {
+    router.push('/home')
 }
 </script>
-<style lang="scss" scoped>
-.not-found {
-    width: 100%;
-}
-
+<style>
 .not-found-content {
     height: 100%;
     display: flex;
@@ -85,13 +78,15 @@ export default {
     align-items: center;
     color: #999;
     font-size: 12px;
-    
+
     a {
         color: #409EFF;
     }
+
     a:hover {
         color: #777;
     }
+
     span {
         margin: 0 5px;
     }

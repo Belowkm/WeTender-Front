@@ -3,8 +3,6 @@
     <router-view />
   </div>
 </template>
-<script>
-export default {
-  name: 'App',
-};
+<script lang="ts" setup>
+
 </script>

@@ -33,6 +33,11 @@ const router = createRouter({
       component: () => import('../views/dashboard.vue')
     },
     {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/about.vue')
+    },
+    {
       path: '/:catchAll(.*)',
       name: '404',
       component: Error

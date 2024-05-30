@@ -1,8 +1,8 @@
 <template>
     <div class="register">
-        <div class="register-title">账号注册</div>
         <el-form :model="registerForm" :rules="registerRules" ref="registerForm" label-width="100px"
             class="register-form">
+            <h3 class="title">账户注册</h3>
             <el-form-item label="用户名" prop="username">
                 <el-input v-model="registerForm.username"></el-input>
             </el-form-item>
@@ -49,7 +49,15 @@ export default {
                 ],
                 checkPass: [
                     { required: true, message: '请再次输入密码', trigger: 'blur' },
-                    { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
+                    {
+                        validator: (rule, value, callback) => {
+                            if (value !== this.registerForm.password) {
+                                callback(new Error('两次输入密码不一致!'));
+                            } else {
+                                callback();
+                            }
+                        }, trigger: 'blur'
+                    }
                 ]
             },
             dialogVisible: false,
@@ -73,3 +81,34 @@ export default {
     }
 }
 </script>
+<style>
+.register-form {
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: 1px solid #eee;
+}
+.register {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+</style>
