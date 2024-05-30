@@ -77,7 +77,7 @@
             </el-menu>
             
             <el-menu>
-                <el-sub-menu>
+                <el-sub-menu disabled>
                     <template #title>
                         <i class="el-icon-menu"></i>
                         银行界面
