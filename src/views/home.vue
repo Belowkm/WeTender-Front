@@ -11,13 +11,13 @@
 import { useRouter } from 'vue-router';
 const router = useRouter();
 const Town_gov = () => {
-    router.push('/dashboard/Town_gov');
+    router.push('/dashboard/town_gov');
 };
 const Enterprise = () => {
-    router.push('/dashboard/Enterprise');
+    router.push('/dashboard/enterprise');
 };
 const County_gov = () => {
-    router.push('/dashboard/County_gov');
+    router.push('/dashboard/county_gov');
 };
 </script>
 <style>

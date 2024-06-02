@@ -18,19 +18,48 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path:'/login',
-      name:'login',
+      path: '/login',
+      name: 'login',
       component: Login
     },
     {
-      path:'/register',
-      name:'register',
+      path: '/register',
+      name: 'register',
       component: Register
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/dashboard.vue')
+      component: () => import('../views/dashboard.vue'),
+
+      children: [
+        {
+          path: '/dashboard/town_gov',
+          name: 'town_gov',
+          component: () => import('../components/town_gov/index.vue'),
+          children: [
+            {
+              path: '/dashboard/town_gov/table',
+              name: 'town_table',
+              component: () => import('../components/town_gov/table.vue')
+            }]
+        },
+        {
+          path: '/dashboard/county_gov',
+          name: 'county_gov',
+          component: () => import('../components/dashboards/county_gov.vue')
+        },
+        {
+          path: '/dashboard/enterprise',
+          name: 'enterprise',
+          component: () => import('../components/dashboards/enterprise.vue')
+        },
+        {
+          path: '/dashboard/',
+          name: 'none',
+          component: () => import('../components/dashboards/none.vue')
+        }
+      ]
     },
     {
       path: '/about',

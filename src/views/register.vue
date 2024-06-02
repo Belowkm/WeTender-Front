@@ -28,7 +28,7 @@ import { ElMessage } from 'element-plus';
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 
-const Msg = '注册功能暂未开发完成，请在主页选择用户使用'
+const Msg = '注册功能暂未开发完成，请直接在首页选择用户使用'
 ElMessage.warning(Msg)
 
 const router = useRouter();
