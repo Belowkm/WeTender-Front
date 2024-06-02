@@ -26,11 +26,31 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 const activeIndex = ref('1')
+const router = useRouter()
 const handleSelect = (key, keyPath) => {
     if (key === '1') {
-        useRouter().push('/dashboard')
+        router.push('/dashboard/town_gov/overview')
     }
+    if (key === '2') {
+        router.push('/dashboard/town_gov/table')
+    }
+    if (key === '3') {
+        router.push('/dashboard/town_gov/budget')
+    }
+    activeIndex.value = key
     console.log(key, keyPath)
 }
 </script>
-<style></style>
+<style>
+.Aside {
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    border-right: 1px solid #e6e6e6;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 999; 
+    
+}
+</style>

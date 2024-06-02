@@ -39,20 +39,58 @@ const router = createRouter({
           component: () => import('../components/town_gov/index.vue'),
           children: [
             {
+              path: '/dashboard/town_gov/overview',
+              name: 'town_overview',
+              component: () => import('../components/town_gov/overview.vue')
+            },
+            {
               path: '/dashboard/town_gov/table',
               name: 'town_table',
               component: () => import('../components/town_gov/table.vue')
-            }]
+            },
+            {
+              path: '/dashboard/town_gov/budget',
+              name: 'town_budget',
+              component: () => import('../components/town_gov/budget.vue')
+            },
+            ////{
+            ///  path: '/dashboard/town_gov/contract',
+            ///  name: 'town_contract',
+            ///  component: () => import('../components/town_gov/contract.vue')
+            ////}
+          ]
+        },
+        {
+          path: '/dashboard/enterprise',
+          name: 'enterprise',
+          component: () => import('../components/enterprise/index.vue'),
+          children:[
+              {
+                path: '/dashboard/enterprise/overview',
+                name: 'enterprise_overview',
+                component: () => import('../components/enterprise/overview.vue')
+              },
+              {
+                path: '/dashboard/enterprise/table',
+                name: 'enterprise_table',
+                component: () => import('../components/enterprise/table.vue')
+              },
+              {
+                path: '/dashboard/enterprise/assets',
+                name: 'enterprise_assets',
+                component: () => import('../components/enterprise/Assets.vue')
+              },
+              ////{
+              ///  path: '/dashboard/enterprise/contract',
+              ///  name: 'enterprise_contract',
+              ///  component: () => import('../components/enterprise/contract.vue')
+              ////}
+          ]
         },
         {
           path: '/dashboard/county_gov',
           name: 'county_gov',
           component: () => import('../components/dashboards/county_gov.vue')
-        },
-        {
-          path: '/dashboard/enterprise',
-          name: 'enterprise',
-          component: () => import('../components/dashboards/enterprise.vue')
         },
         {
           path: '/dashboard/',
