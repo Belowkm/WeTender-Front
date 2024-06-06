@@ -19,6 +19,18 @@
                     <span>资产管理</span>
                 </template>
             </el-menu-item>
+            <el-menu-item index="4" disabled>
+                <template #title>
+                    <i class="el-icon-setting"></i>
+                    <span>合同管理</span>
+                </template>
+            </el-menu-item>
+            <el-menu-item index="5" disabled>
+                <template #title>
+                    <i class="el-icon-setting"></i>
+                    <span>外包管理</span>
+                </template>
+            </el-menu-item>
         </el-menu>
     </div>
 </template>

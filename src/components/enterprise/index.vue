@@ -4,7 +4,7 @@
             <Aside />
         </el-aside>
         <el-main class="enterprise_main">
-            <router-view />
+            <router-view/>
         </el-main>
     </el-container>
 </template>

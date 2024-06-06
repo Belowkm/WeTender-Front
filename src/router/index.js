@@ -39,6 +39,11 @@ const router = createRouter({
           component: () => import('../components/town_gov/index.vue'),
           children: [
             {
+              path: '/dashboard/town_gov/',
+              name: 'town_gov_home',
+              component: () => import('../components/town_gov/overview.vue')
+            },
+            {
               path: '/dashboard/town_gov/overview',
               name: 'town_overview',
               component: () => import('../components/town_gov/overview.vue')
@@ -64,27 +69,27 @@ const router = createRouter({
           path: '/dashboard/enterprise',
           name: 'enterprise',
           component: () => import('../components/enterprise/index.vue'),
-          children:[
-              {
-                path: '/dashboard/enterprise/overview',
-                name: 'enterprise_overview',
-                component: () => import('../components/enterprise/overview.vue')
-              },
-              {
-                path: '/dashboard/enterprise/table',
-                name: 'enterprise_table',
-                component: () => import('../components/enterprise/table.vue')
-              },
-              {
-                path: '/dashboard/enterprise/assets',
-                name: 'enterprise_assets',
-                component: () => import('../components/enterprise/Assets.vue')
-              },
-              ////{
-              ///  path: '/dashboard/enterprise/contract',
-              ///  name: 'enterprise_contract',
-              ///  component: () => import('../components/enterprise/contract.vue')
-              ////}
+          children: [
+            {
+              path: '/dashboard/enterprise/overview',
+              name: 'enterprise_overview',
+              component: () => import('../components/enterprise/overview.vue')
+            },
+            {
+              path: '/dashboard/enterprise/table',
+              name: 'enterprise_table',
+              component: () => import('../components/enterprise/table.vue')
+            },
+            {
+              path: '/dashboard/enterprise/assets',
+              name: 'enterprise_assets',
+              component: () => import('../components/enterprise/Assets.vue')
+            },
+            ////{
+            ///  path: '/dashboard/enterprise/contract',
+            ///  name: 'enterprise_contract',
+            ///  component: () => import('../components/enterprise/contract.vue')
+            ////}
           ]
         },
         {

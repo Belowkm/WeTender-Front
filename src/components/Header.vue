@@ -28,24 +28,27 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const activeIndex = ref('1')
 const handleSelect = (key, keyPath) => {
-    if (key === '1') {
-        router.push('/')
-    } else if (key === '2') {
-        router.push('/dashboard')
-    } else if (key === '3') {
-        router.push('/about')
-    }
-    else if (key === '0') {
-        router.push('/')
-    }
-    else if (key === '2-1') {
-        router.push('/dashboard/town_gov')
-    }
-    else if (key === '2-2') {
-        router.push('/dashboard/enterprise')
-    }
-    else if (key === '2-3') {
-        router.push('/dashboard/county_gov')
+    switch (key) {
+        case '1':
+            router.push('/')
+            break;
+        case '2-1':
+            router.push('/dashboard/town_gov')
+            break;
+        case '2-2':
+            router.push('/dashboard/enterprise')
+            break;
+        case '2-3':
+            router.push('/dashboard/county_gov')
+            break;
+        case '2-4':
+            router.push('/dashboard/bank')
+            break;
+        case '3':
+            router.push('/about')
+            break;
+        default:
+            break;
     }
     activeIndex.value = key
     console.log(key, keyPath);
@@ -71,5 +74,4 @@ const goToRegister = () => {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
 </style>

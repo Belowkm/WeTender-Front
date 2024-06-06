@@ -19,6 +19,12 @@
                     <span>预算管理</span>
                 </template>
             </el-menu-item>
+            <el-menu-item index="4" disabled>
+                <template #title>
+                    <i class="el-icon-setting"></i>
+                    <span>合同管理</span>
+                </template>
+            </el-menu-item>
         </el-menu>
     </div>
 </template>
@@ -31,12 +37,18 @@ const handleSelect = (key, keyPath) => {
     if (key === '1') {
         router.push('/dashboard/town_gov/overview')
     }
-    if (key === '2') {
+    else if (key === '2') {
         router.push('/dashboard/town_gov/table')
     }
-    if (key === '3') {
+    else if (key === '3') {
         router.push('/dashboard/town_gov/budget')
     }
+    else if (key === '4') {
+        router.push('/dashboard/town_gov/contract')
+    }
+    else {
+        router.push('/dashboard/town_gov/overview')
+    } 
     activeIndex.value = key
     console.log(key, keyPath)
 }
@@ -50,7 +62,7 @@ const handleSelect = (key, keyPath) => {
     position: fixed;
     top: 60px;
     left: 0;
-    z-index: 999; 
-    
+    z-index: 999;
+
 }
 </style>
