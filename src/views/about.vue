@@ -32,4 +32,5 @@ const show = ref(true)
     box-sizing: border-box;
     margin-right: 20px;
 }
+
 </style>

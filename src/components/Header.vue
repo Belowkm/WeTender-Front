@@ -61,7 +61,7 @@ const goToRegister = () => {
     router.push('/register')
 }
 </script>
-<style>
+<style lang="scss" scoped>
 .flex-grow {
     flex-grow: 1;
 }

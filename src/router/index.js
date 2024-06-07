@@ -3,6 +3,14 @@ import HomeView from '../views/home.vue'
 import Login from '../views/login.vue'
 import Register from '../views/register.vue'
 import Error from '../views/404.vue'
+import Dashboard from '../views/dashboard.vue'
+
+///Town_gov
+import Town_gov from '../components/town_gov/index.vue'
+import Town_gov_home from '../components/town_gov/overview.vue'
+import Town_gov_overview from '../components/town_gov/overview.vue'
+import Town_gov_project from '../components/town_gov/project.vue'
+import Town_gov_budget from '../components/town_gov/budget.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,33 +38,33 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/dashboard.vue'),
-
+      component: Dashboard,
       children: [
         {
+
           path: '/dashboard/town_gov',
           name: 'town_gov',
-          component: () => import('../components/town_gov/index.vue'),
+          component: Town_gov,
           children: [
             {
               path: '/dashboard/town_gov/',
               name: 'town_gov_home',
-              component: () => import('../components/town_gov/overview.vue')
+              component: Town_gov_home
             },
             {
               path: '/dashboard/town_gov/overview',
               name: 'town_overview',
-              component: () => import('../components/town_gov/overview.vue')
+              component: Town_gov_overview
             },
             {
-              path: '/dashboard/town_gov/table',
-              name: 'town_table',
-              component: () => import('../components/town_gov/table.vue')
+              path: '/dashboard/town_gov/project',
+              name: 'town_project',
+              component: Town_gov_project
             },
             {
               path: '/dashboard/town_gov/budget',
               name: 'town_budget',
-              component: () => import('../components/town_gov/budget.vue')
+              component: Town_gov_budget
             },
             ////{
             ///  path: '/dashboard/town_gov/contract',

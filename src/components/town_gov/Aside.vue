@@ -3,7 +3,7 @@
         <el-menu :default-active="activeIndex" class="el-menu-vertical-demo" @select="handleSelect">
             <el-menu-item index="1">
                 <template #title>
-                    <i class="el-icon-menu"></i>
+                    <el-icon><House /></el-icon>
                     <span>数据概览</span>
                 </template>
             </el-menu-item>
@@ -29,8 +29,10 @@
     </div>
 </template>
 <script lang="ts" setup>
+import Home from '@/views/home.vue';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+
 const activeIndex = ref('1')
 const router = useRouter()
 const handleSelect = (key, keyPath) => {
@@ -38,7 +40,7 @@ const handleSelect = (key, keyPath) => {
         router.push('/dashboard/town_gov/overview')
     }
     else if (key === '2') {
-        router.push('/dashboard/town_gov/table')
+        router.push('/dashboard/town_gov/project')
     }
     else if (key === '3') {
         router.push('/dashboard/town_gov/budget')
@@ -53,7 +55,7 @@ const handleSelect = (key, keyPath) => {
     console.log(key, keyPath)
 }
 </script>
-<style>
+<style lang="scss" scoped>
 .Aside {
     width: 200px;
     height: 100%;
