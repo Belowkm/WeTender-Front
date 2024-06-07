@@ -4,8 +4,19 @@
             <span>乡级政府项目列表</span>
         </div>
         <div class="add-container">
-            <el-button type="primary" @click="addProject">创建项目</el-button>
-            <el-button type="primary" @click="exportExcel">导出Excel</el-button>
+            <el-icon></el-icon>
+            <el-button type="primary" @click="addProject">
+                <el-icon>
+                    <CirclePlus />
+                </el-icon>
+                <span>创建项目</span>
+            </el-button>
+            <el-button type="primary" @click="exportExcel" disabled>
+                <el-icon>
+                    <Download />
+                </el-icon>
+                <span>导出Excel</span>
+            </el-button>
         </div>
         <div class="table-container">
             <el-table :data="projects" :row-key="(row) => row.id" :default-expand-all="true"
@@ -44,7 +55,12 @@
                 </el-table-column>
                 <el-table-column label="项目哈希" prop="contract_hash" width="200">
                     <template #default="scope">
-                        {{ scope.row.contract_hash }}
+                        <span>{{ scope.row.contract_hash }}</span>
+                        <el-tooltip class="box-item" effect="dark" content="复制" placement="top">
+                            <el-icon @click="CopyHash(scope.row.contract_hash)">
+                                <CopyDocument />
+                            </el-icon>
+                        </el-tooltip>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" width="100">
@@ -62,6 +78,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
+import { CirclePlus, CopyDocument, Download } from '@element-plus/icons-vue';
 ///import { getProjects } from '@/api/project'
 const projects = ref([
     {
@@ -146,23 +163,31 @@ const handleClick = (row: any) => {
 }
 const addProject = () => {
     ElMessageBox.prompt('Please input your e-mail', '创建项目', {
-    confirmButtonText: '确认',
-    cancelButtonText: '取消',
-    inputPattern:
-      /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-    inputErrorMessage: 'Invalid Email',
-  })
-    .then(({ value }) => {
-      ElMessage({
-        type: 'success',
-        message: `Your email is:${value}`,
-      })
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        inputPattern:
+            /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+        inputErrorMessage: 'Invalid Email',
     })
-    .catch(() => {
-      ElMessage({
-        type: 'info',
-        message: 'Input canceled',
-      })
+        .then(({ value }) => {
+            ElMessage({
+                type: 'success',
+                message: `Your email is:${value}`,
+            })
+        })
+        .catch(() => {
+            ElMessage({
+                type: 'info',
+                message: 'Input canceled',
+            })
+        })
+}
+const CopyHash = (hash: string) => {
+    navigator.clipboard.writeText(hash).then(() => {
+        ElMessage({
+            type: 'success',
+            message: '复制成功',
+        })
     })
 }
 </script>
@@ -199,5 +224,6 @@ const addProject = () => {
     overflow: auto;
     height: calc(100vh - 300px);
     width: calc(100% - 40px);
+    margin-bottom: 20px;
 }
 </style>

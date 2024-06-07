@@ -3,25 +3,33 @@
         <el-menu :default-active="activeIndex" class="el-menu-vertical-demo" @select="handleSelect">
             <el-menu-item index="1">
                 <template #title>
-                    <el-icon><House /></el-icon>
+                    <el-icon>
+                        <House />
+                    </el-icon>
                     <span>数据概览</span>
                 </template>
             </el-menu-item>
             <el-menu-item index="2">
                 <template #title>
-                    <el-icon><Menu /></el-icon>
+                    <el-icon>
+                        <Menu />
+                    </el-icon>
                     <span>项目管理</span>
                 </template>
             </el-menu-item>
             <el-menu-item index="3">
                 <template #title>
-                    <el-icon><Operation /></el-icon>
+                    <el-icon>
+                        <Operation />
+                    </el-icon>
                     <span>预算管理</span>
                 </template>
             </el-menu-item>
-            <el-menu-item index="4" disabled>
+            <el-menu-item index="4" disabled @click.prevent="showAlarm">
                 <template #title>
-                    <el-icon><Document /></el-icon>
+                    <el-icon>
+                        <Document />
+                    </el-icon>
                     <span>合同管理</span>
                 </template>
             </el-menu-item>
@@ -29,7 +37,8 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { Document, House, Menu, Operation} from '@element-plus/icons-vue';
+import { Document, House, Menu, Operation } from '@element-plus/icons-vue';
+import { ElMessage } from 'element-plus';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -50,7 +59,11 @@ const handleSelect = (key, keyPath) => {
     }
     else {
         router.push('/dashboard/town_gov/overview')
-    } 
+    }
     console.log(key, keyPath)
+}
+
+const showAlarm = () => {
+    ElMessage.warning('该功能暂未开放，敬请期待！');
 }
 </script>

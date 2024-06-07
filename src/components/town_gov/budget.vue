@@ -57,20 +57,20 @@ const handleClick = () => {
                 .then(({ value }) => {
                     ElMessage({
                         type: 'success',
-                        message: `设置预算成功: ${value}`,
+                        message: `设置预算成功！预算金额为: ${value}`,
                     });
                 })
                 .catch(() => {
                     ElMessage({
                         type: 'info',
-                        message: '设置预算取消',
+                        message: '设置预算取消！',
                     });
                 });
         })
         .catch(() => {
             ElMessage({
                 type: 'info',
-                message: '设置预算取消',
+                message: '设置预算取消！',
             });
         });
     /*
