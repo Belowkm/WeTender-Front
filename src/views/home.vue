@@ -7,7 +7,7 @@
 </script>
 <style>
 .homepage {
-    left: 35%;
+    left: 39%;
     top: calc(20% + 60px);
     position: fixed;
 }

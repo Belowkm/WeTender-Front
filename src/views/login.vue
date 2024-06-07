@@ -26,7 +26,7 @@
 import { ElMessage } from 'element-plus';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-const Msg = '登录功能暂未开发完成，请直接在首页选择用户使用'
+const Msg = '登录功能暂未开发完成，请下拉仪表盘直接选择用户使用'
 ElMessage.warning(Msg);
 
 const username = ref('');

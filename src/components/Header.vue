@@ -32,6 +32,9 @@ const handleSelect = (key, keyPath) => {
         case '1':
             router.push('/')
             break;
+        case '2':
+            router.push('/dashboard')
+            break;
         case '2-1':
             router.push('/dashboard/town_gov')
             break;
