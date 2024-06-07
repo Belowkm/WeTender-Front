@@ -33,3 +33,4 @@ nuxt.config.ts.map
 nuxt.config.mjs.map
 nuxt.config.cjs.map
 .idea
+dist/
