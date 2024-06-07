@@ -1,7 +1,7 @@
 <template>
     <div class="project-container">
         <div class="title-container">
-            <span>乡级政府项目列表</span>
+            <span>县级政府项目列表</span>
         </div>
         <div class="add-container">
             <el-icon></el-icon>

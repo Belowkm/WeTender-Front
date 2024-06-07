@@ -20,12 +20,12 @@
             <el-menu-item index="3">
                 <template #title>
                     <el-icon>
-                        <Histogram />
+                        <Operation />
                     </el-icon>
-                    <span>资产管理</span>
+                    <span>预算管理</span>
                 </template>
             </el-menu-item>
-            <el-menu-item index="4" disabled>
+            <el-menu-item index="4" disabled @click.prevent="showAlarm">
                 <template #title>
                     <el-icon>
                         <Document />
@@ -36,52 +36,45 @@
             <el-menu-item index="5" disabled>
                 <template #title>
                     <el-icon>
-                        <OfficeBuilding />
+                        <Location />
                     </el-icon>
-                    <span>外包管理</span>
+                    <span>下辖组织</span>
                 </template>
             </el-menu-item>
         </el-menu>
     </div>
 </template>
 <script lang="ts" setup>
+import { Document, House, Location, Menu, Operation } from '@element-plus/icons-vue';
+import { ElMessage } from 'element-plus';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { House, Menu, Document, Histogram, OfficeBuilding } from '@element-plus/icons-vue'
+
 const activeIndex = ref('1')
 const router = useRouter()
 const handleSelect = (key, keyPath) => {
     if (key === '1') {
-        router.push('/dashboard/enterprise/overview')
+        router.push('/dashboard/county_gov/overview')
     }
     else if (key === '2') {
-        router.push('/dashboard/enterprise/project')
+        router.push('/dashboard/county_gov/project')
     }
     else if (key === '3') {
-        router.push('/dashboard/enterprise/Assets')
+        router.push('/dashboard/county_gov/budget')
     }
     else if (key === '4') {
-        router.push('/dashboard/enterprise/contract')
+        router.push('/dashboard/county_gov/contract')
     }
     else if (key === '5') {
-        router.push('/dashboard/enterprise/outsource')
+        router.push('/dashboard/county_gov/sub_gov')
     }
     else {
-        router.push('/dashboard/enterprise/overview')
+        router.push('/dashboard/county_gov/overview')
     }
     console.log(key, keyPath)
 }
-</script>
-<style>
-.Aside {
-    width: 200px;
-    height: 100%;
-    background-color: #fff;
-    border-right: 1px solid #e6e6e6;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    z-index: 999;
 
+const showAlarm = () => {
+    ElMessage.warning('该功能暂未开放，敬请期待！');
 }
-</style>
+</script>
