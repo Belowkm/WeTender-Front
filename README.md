@@ -1,29 +1,35 @@
-# WeTender-Front
+# 关于 WeTender-Front
 
-This template should help get you started developing with Vue 3 in Vite.
+WeTender-Front是专为[WeTender项目](https://github.com/Belowkm/WeTender)开发的前端项目，采用[Vue3](https://cn.vuejs.org/) + [ElementPlus](https://element-plus.org/zh-CN/)等底层开源平台开发。
 
-## Recommended IDE Setup
+## 建议使用的操作系统
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Linux
+- MacOS
+- Windows
 
-## Customize configuration
+## 快速开始
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+-安装依赖库
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+-构建项目（可选）
+
+```sh
+npm run build
+```
+
+-运行项目
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 特别说明
 
-```sh
-npm run build
-```
+1. 运行项目前请先启动后端服务，后端服务地址为：http://localhost:5000/
+2. 运行项目前请先安装Node.js，安装地址为：https://nodejs.org/zh-cn/download/
+3. 项目仍在开发当中，后续会持续更新，敬请关注。
