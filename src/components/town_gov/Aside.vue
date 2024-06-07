@@ -9,19 +9,19 @@
             </el-menu-item>
             <el-menu-item index="2">
                 <template #title>
-                    <i class="el-icon-document"></i>
+                    <el-icon><Menu /></el-icon>
                     <span>项目管理</span>
                 </template>
             </el-menu-item>
             <el-menu-item index="3">
                 <template #title>
-                    <i class="el-icon-setting"></i>
+                    <el-icon><Operation /></el-icon>
                     <span>预算管理</span>
                 </template>
             </el-menu-item>
             <el-menu-item index="4" disabled>
                 <template #title>
-                    <i class="el-icon-setting"></i>
+                    <el-icon><Document /></el-icon>
                     <span>合同管理</span>
                 </template>
             </el-menu-item>
@@ -29,7 +29,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import Home from '@/views/home.vue';
+import { Document, House, Menu, Operation} from '@element-plus/icons-vue';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -51,19 +51,6 @@ const handleSelect = (key, keyPath) => {
     else {
         router.push('/dashboard/town_gov/overview')
     } 
-    activeIndex.value = key
     console.log(key, keyPath)
 }
 </script>
-<style lang="scss" scoped>
-.Aside {
-    width: 200px;
-    height: 100%;
-    background-color: #fff;
-    border-right: 1px solid #e6e6e6;
-    position: fixed;
-    top: 60px;
-    left: 0;
-
-}
-</style>

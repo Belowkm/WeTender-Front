@@ -29,12 +29,13 @@ import Footer from './components/Footer.vue';
 }
 .footer {
     position: fixed;
-    bottom: -1%;
+    bottom: 0;
     left: 40%;
     margin: 0 auto;
-    overflow: hidden;
     text-align: center;
     font-size: 10px;
     color: #999;
+    overflow: hidden;
+    
 }
 </style>

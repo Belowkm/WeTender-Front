@@ -6,11 +6,12 @@
             <el-table-column prop="rev" label="剩余预算" />
             <el-table-column prop="rev" label="年度支出" />
         </el-table>
-        <el-button class="add_rev" type="primary" @click="handleClick">新增预算</el-button>
+        <el-button class="add_rev" type="primary" @click="handleClick">设置预算</el-button>
     </div>
 </template>
 <script lang="ts" setup>
 import axios from 'axios';
+import { ElMessage, ElMessageBox } from 'element-plus';
 ///const url = 'http://localhost:5003/WeBASE-Transaction/trans/send';
 /*const dataset = {
     "groupId": 1,
@@ -41,7 +42,43 @@ const tableData = [
     },
 ]
 const handleClick = () => {
-    console.log('click')
+    ElMessageBox.prompt('请输入本年度预算', '设置预算', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /[0-9]/,
+        inputErrorMessage: '请输入数字',
+    })
+        .then(() => {
+            ElMessageBox.confirm('请注意，该操作将覆盖当前预算！', '提示', {
+                confirmButtonText: '确认',
+                cancelButtonText: "取消",
+                type: 'warning',
+            })
+                .then(({ value }) => {
+                    ElMessage({
+                        type: 'success',
+                        message: `设置预算成功: ${value}`,
+                    });
+                })
+                .catch(() => {
+                    ElMessage({
+                        type: 'info',
+                        message: '设置预算取消',
+                    });
+                });
+        })
+        .catch(() => {
+            ElMessage({
+                type: 'info',
+                message: '设置预算取消',
+            });
+        });
+    /*
+axios.post(url, dataset).then(res => {
+    console.log(res.data.data)
+    this.balance = res.data.data
+})
+*/
 }
 </script>
 <style lang="scss" scoped>

@@ -53,7 +53,6 @@ const handleSelect = (key, keyPath) => {
         default:
             break;
     }
-    activeIndex.value = key
     console.log(key, keyPath);
 
 }

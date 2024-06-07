@@ -1,6 +1,7 @@
 <template>
-    <h1>这是一个测试界面</h1>
-    <div>
+    <div class="test">
+    <span>这是一个测试界面</span>
+    <br>
         <el-button @click="show = !show">点击按钮</el-button>
 
         <div style="display: flex; margin-top: 20px; height: 100px">
@@ -20,6 +21,11 @@ const show = ref(true)
 </script>
 
 <style>
+.test{
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
 .transition-box {
     margin-bottom: 10px;
     width: 200px;

@@ -14,6 +14,9 @@ import Aside from './Aside.vue';
 <style>
 .town_aside {
     width: 200px;
+    position: fixed;
+    top: 60px;
+    left: 0;
 }
 
 .town_main {
