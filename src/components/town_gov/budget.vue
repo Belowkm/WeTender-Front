@@ -1,6 +1,6 @@
 <template>
     <div class="budget-table">
-        <span>乡级政府预算情况</span>
+        <span>乡级政府2024年预算情况</span>
         <el-table class="list" :data="tableData" border>
             <el-table-column prop="balance" label="本年度预算" />
             <el-table-column prop="rev" label="剩余预算" />
@@ -46,15 +46,13 @@ const handleClick = () => {
 </script>
 <style lang="scss" scoped>
 .budget-table {
-    top: 100px;
-    left: 300px;
+    top: calc(10% + 60px);
+    left: calc(10% + 200px);
+    right: 10%;
     position: fixed;
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 800px;
-    height: 400px;
     text-align: center;
 
     span {
@@ -63,9 +61,11 @@ const handleClick = () => {
     }
 
 }
+
 .list {
     margin-top: 20px;
 }
+
 .add_rev {
     margin-top: 20px;
 }

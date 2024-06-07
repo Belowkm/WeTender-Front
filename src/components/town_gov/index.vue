@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-aside width="200px" class="town_aside">
+        <el-aside class="town_aside">
             <Aside />
         </el-aside>
         <el-main class="town_main">
@@ -13,6 +13,12 @@ import Aside from './Aside.vue';
 </script>
 <style>
 .town_aside {
-    overflow: hidden;
+    width: 200px;
+}
+
+.town_main {
+    top: 100px;
+    left: 400px;
+    position: fixed;
 }
 </style>
