@@ -89,8 +89,6 @@ const handleClick = (row: any) => {
     height: 85%;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left:20px;
-    margin-right:20px;
     text-align: center;
     border-radius: 10px;
     font-weight: bold;

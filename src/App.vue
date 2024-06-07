@@ -20,7 +20,6 @@ import Footer from './components/Footer.vue';
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    z-index: 3000;
     top: 0;
     left: 0;
     right: 0;
@@ -28,17 +27,14 @@ import Footer from './components/Footer.vue';
     margin: 0 auto;
     overflow: hidden;
 }
-
 .footer {
     position: fixed;
-    z-index: 3000;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: -1%;
+    left: 40%;
     margin: 0 auto;
     overflow: hidden;
     text-align: center;
-    font-size: 12px;
+    font-size: 10px;
     color: #999;
 }
 </style>

@@ -64,7 +64,6 @@ const handleSelect = (key, keyPath) => {
     position: fixed;
     top: 60px;
     left: 0;
-    z-index: 999;
 
 }
 </style>
