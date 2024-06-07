@@ -30,6 +30,6 @@ npm run dev
 
 ### 特别说明
 
-1. 运行项目前请先启动后端服务，后端服务地址为：http://localhost:5000/
-2. 运行项目前请先安装Node.js，安装地址为：https://nodejs.org/zh-cn/download/
+1. 运行项目前请先启动后端服务，后端服务地址为：<http://localhost:5000/>
+2. 运行项目前请先安装Node.js，安装地址为：<https://nodejs.org/zh-cn/download/>
 3. 项目仍在开发当中，后续会持续更新，敬请关注。
