@@ -57,7 +57,7 @@ const handleClick = () => {
                 .then(({ value }) => {
                     ElMessage({
                         type: 'success',
-                        message: `设置预算成功！预算金额为: ${value}`,
+                        message: `设置预算成功！`,
                     });
                 })
                 .catch(() => {

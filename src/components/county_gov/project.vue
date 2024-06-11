@@ -159,7 +159,7 @@ const handleClick = (row: any) => {
     console.log(row)
     console.log('click')
     console.log(row.id)
-    window.open(`/project/town_gov/${row.id}`)
+    window.open(`/project/county_gov/${row.id}`)
 }
 const addProject = () => {
     ElMessageBox.prompt('Please input your e-mail', '创建项目', {

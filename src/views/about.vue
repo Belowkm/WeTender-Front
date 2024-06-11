@@ -1,8 +1,9 @@
 <template>
     <div class="admin-backend">
-        <el-button type="danger" @click="goToBackend">
-            前往Super管理员界面
-        </el-button>
+        <el-button type="danger" @click="goToBackend">前往Super管理员界面</el-button>
+        <el-tooltip effect="dark" content="当用户异常时，可使用此功能进行重置" placement="top">
+        <el-button type="warning" @click="ResetUsers" disabled>重置所有用户信息</el-button>
+    </el-tooltip>
     </div>
 </template>
 <script lang="ts" setup>
@@ -17,5 +18,27 @@ const goToBackend = () => {
             window.open('http://47.106.226.160:5000/')
         })
 }
+const ResetUsers = () => {
+    ElMessageBox.confirm('请注意，该操作将导致所有用户数据被清空，是否继续？', '警告', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning',
+    })
+        .then(() => {
+            ElMessage.success('重置成功')
+        })
+};
 </script>
-<style></style>
+<style>
+.admin-backend {
+    margin: 20px;
+}
+
+.admin-backend button {
+    margin: 10px;
+}
+
+.admin-backend button:disabled {
+    cursor: not-allowed;
+}
+</style>

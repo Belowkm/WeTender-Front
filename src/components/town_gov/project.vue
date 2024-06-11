@@ -162,12 +162,9 @@ const handleClick = (row: any) => {
     window.open(`/project/town_gov/${row.id}`)
 }
 const addProject = () => {
-    ElMessageBox.prompt('Please input your e-mail', '创建项目', {
+    ElMessageBox.prompt('请输入要创建的项目的名称', '创建项目', {
         confirmButtonText: '确认',
         cancelButtonText: '取消',
-        inputPattern:
-            /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-        inputErrorMessage: 'Invalid Email',
     })
         .then(({ value }) => {
             ElMessage({

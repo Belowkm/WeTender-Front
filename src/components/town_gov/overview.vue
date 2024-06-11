@@ -9,6 +9,7 @@ const Address = '0x0000000000000000000000000000000000000000'
 const ViewAddress = () => {
   ElMessageBox.alert(Address, '合约地址', {
     confirmButtonText: '确定'
+    
   }),
     navigator.clipboard.writeText(Address)
       .then(() => {

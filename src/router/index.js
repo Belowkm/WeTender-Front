@@ -1,3 +1,4 @@
+// Main
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/home.vue'
 import Login from '../views/login.vue'
@@ -5,7 +6,7 @@ import Register from '../views/register.vue'
 import Error from '../views/404.vue'
 import Dashboard from '../views/dashboard.vue'
 
-///Town_gov
+// Town_gov
 import Town_gov from '../components/town_gov/index.vue'
 import Town_gov_home from '../components/town_gov/overview.vue'
 import Town_gov_overview from '../components/town_gov/overview.vue'
@@ -19,7 +20,7 @@ import Enterprise_overview from '../components/enterprise/overview.vue'
 import Enterprise_project from '../components/enterprise/project.vue'
 import Enterprise_Assets from '../components/enterprise/Assets.vue'
 
-///County_gov
+// County_gov
 import County_gov from '../components/county_gov/index.vue'
 import County_gov_home from '../components/county_gov/overview.vue'
 import County_gov_overview from '../components/county_gov/overview.vue'
