@@ -58,108 +58,108 @@ const router = createRouter({
       component: Dashboard,
       children: [
         {
-          path: '/dashboard/town_gov',
+          path: 'town_gov',
           name: 'town_gov',
           component: Town_gov,
           children: [
             {
-              path: '/dashboard/town_gov/',
+              path: '',
               name: 'town_gov_home',
               component: Town_gov_home,
             },
             {
-              path: '/dashboard/town_gov/overview',
+              path: 'overview',
               name: 'town_overview',
               component: Town_gov_overview,
             },
             {
-              path: '/dashboard/town_gov/project',
+              path: 'project',
               name: 'town_project',
               component: Town_gov_project,
             },
             {
-              path: '/dashboard/town_gov/budget',
+              path: 'budget',
               name: 'town_budget',
               component: Town_gov_budget,
             },
             ////{
-            ///  path: '/dashboard/town_gov/contract',
+            ///  path: 'contract',
             ///  name: 'town_contract',
             ///  component: () => import('../components/town_gov/contract.vue')
             ////}
           ]
         },
         {
-          path: '/dashboard/enterprise',
+          path: 'enterprise',
           name: 'enterprise',
           component: Enterprise,
           children: [
             {
-              path: '/dashboard/enterprise/',
+              path: '',
               name: 'enterprise_home',
               component: Enterprise_home,
             },
             {
-              path: '/dashboard/enterprise/overview',
+              path: 'overview',
               name: 'enterprise_overview',
               component: Enterprise_overview,
             },
             {
-              path: '/dashboard/enterprise/project',
+              path: 'project',
               name: 'enterprise_project',
               component: Enterprise_project,
             },
             {
-              path: '/dashboard/enterprise/assets',
+              path: 'assets',
               name: 'enterprise_assets',
               component: Enterprise_Assets,
             },
             ////{
-            ///  path: '/dashboard/enterprise/contract',
+            ///  path: 'contract',
             ///  name: 'enterprise_contract',
             ///  component: () => import('../components/enterprise/contract.vue')
             ////}
           ]
         },
         {
-          path: '/dashboard/county_gov',
+          path: 'county_gov',
           name: 'county_gov',
           component: County_gov,
           children: [
             {
-              path: '/dashboard/county_gov/',
+              path: '',
               name: 'county_gov_home',
               component: County_gov_home,
             },
             {
-              path: '/dashboard/county_gov/overview',
+              path: 'overview',
               name: 'county_overview',
               component: County_gov_overview,
             },
             {
-              path: '/dashboard/county_gov/project',
+              path: 'project',
               name: 'county_project',
               component: County_gov_project,
             },
             {
-              path: '/dashboard/county_gov/budget',
+              path: 'budget',
               name: 'county_budget',
               component: County_gov_budget,
             },
             {
-              path: '/dashboard/county_gov/sub_gov',
+              path: 'sub_gov',
               name: 'sub_gov',
               component: County_gov_sub_gov,
             }
             ////{
-            ///  path: '/dashboard/county_gov/contract',
+            ///  path: 'contract',
             ///  name: 'county_contract',
             ///  component: () => import('../components/county_gov/contract.vue')
             ////}
           ]
         },
         {
-          path: '/dashboard/',
+          path: '',
           name: 'none',
           component: () => import('../components/dashboards/none.vue')
         }

@@ -15,7 +15,7 @@
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 </script>
-<style lang="scss" scoped>
+<style>
 .header {
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     position: fixed;

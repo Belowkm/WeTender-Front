@@ -24,5 +24,12 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 1024 * 1024
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/, '')
+    }
   }
 })
