@@ -17,7 +17,7 @@ import { getBal, getRev } from '@/api/town_gov/getBudget';
 const handleClick = () => {
     ElMessageBox.prompt('请输入本年度预算', '设置预算', {
         confirmButtonText: '确定',
-        cancelButtonText: '取消',+
+        cancelButtonText: '取消',
         
         inputPattern: /[0-9]/,
         inputErrorMessage: '请输入数字',
