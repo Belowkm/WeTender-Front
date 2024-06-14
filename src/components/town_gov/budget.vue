@@ -1,7 +1,7 @@
 <template>
     <div class="budget-table">
         <span>乡级政府2024年预算情况</span>
-        <el-table v-loading="Loading" :element-loading-text="'正在加载'" class="list" :data="tableData" border>
+        <el-table class="list" :data="tableData" border>
             <el-table-column prop="balance" label="本年度预算" />
             <el-table-column prop="rev" label="剩余预算" />
             <el-table-column prop="used" label="年度支出" />
@@ -14,11 +14,18 @@ import { Loading } from '@element-plus/icons-vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { ref } from 'vue';
 import { getBal, getRev } from '@/api/town_gov/getBudget';
+const tableData = [
+    {
+        balance: 0,
+        rev: 0,
+        used: 0,
+    },
+]
 const handleClick = () => {
     ElMessageBox.prompt('请输入本年度预算', '设置预算', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
-        
+
         inputPattern: /[0-9]/,
         inputErrorMessage: '请输入数字',
     })

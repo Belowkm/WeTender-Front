@@ -19,7 +19,7 @@
             </el-button>
         </div>
         <div class="table-container">
-            <el-table v-loading="Loading" :data="projects" :row-key="(row) => row.id" :default-expand-all="true"
+            <el-table :data="projects" :row-key="(row) => row.id" :default-expand-all="true"
                 :tree-props="{ children: 'children', hasChildren: 'hasChildren' }">
                 <el-table-column label="项目编号" prop="id" width="150">
                     <template #default="scope">
@@ -80,7 +80,72 @@ import { ref } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { CirclePlus, CopyDocument, Download, Loading } from '@element-plus/icons-vue';
 ///import { getProjects } from '@/api/project'
-const projects = ref([])
+const projects = ref([
+    {
+        id: '1',
+        name: '项目1',
+        status: '0',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '2',
+        name: '项目2',
+        status: '1',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '3',
+        name: '项目3',
+        status: '2',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '4',
+        name: '项目4',
+        status: '3',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '5',
+        name: '项目5',
+        status: '4',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '6',
+        name: '项目6',
+        status: '5',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '7',
+        name: '项目7',
+        status: '6',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    },
+    {
+        id: '8',
+        name: '项目8',
+        status: '7',
+        created_at: '2021-01-01 00:00:00',
+        updated_at: '2021-01-01 00:00:00',
+        contract_hash: '0x1234567890abcdef',
+    }
+]);
 const loading = ref(false)
 const fetchData = () => {
     loading.value = true
