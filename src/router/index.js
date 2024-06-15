@@ -1,33 +1,6 @@
 // Main
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/home.vue'
-import Login from '../views/login.vue'
-import Register from '../views/register.vue'
-import Error from '../views/404.vue'
-import Dashboard from '../views/dashboard.vue'
-
-// Town_gov
-import Town_gov from '../components/town_gov/index.vue'
-import Town_gov_home from '../components/town_gov/overview.vue'
-import Town_gov_overview from '../components/town_gov/overview.vue'
-import Town_gov_project from '../components/town_gov/project.vue'
-import Town_gov_budget from '../components/town_gov/budget.vue'
-
-///Enterprise
-import Enterprise from '../components/enterprise/index.vue'
-import Enterprise_home from '../components/enterprise/overview.vue'
-import Enterprise_overview from '../components/enterprise/overview.vue'
-import Enterprise_project from '../components/enterprise/project.vue'
-import Enterprise_Assets from '../components/enterprise/Assets.vue'
-
-// County_gov
-import County_gov from '../components/county_gov/index.vue'
-import County_gov_home from '../components/county_gov/overview.vue'
-import County_gov_overview from '../components/county_gov/overview.vue'
-import County_gov_project from '../components/county_gov/project.vue'
-import County_gov_budget from '../components/county_gov/budget.vue'
-import County_gov_sub_gov from '../components/county_gov/sub_gov.vue'
-
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,42 +18,42 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: () => import('../views/login.vue')
     },
     {
       path: '/register',
       name: 'register',
-      component: Register
+      component: () => import('../views/register.vue')
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard,
+      component: () => import('../views/dashboard.vue'),
       children: [
         {
           path: 'town_gov',
           name: 'town_gov',
-          component: Town_gov,
+          component: () => import('../components/town_gov/index.vue'),
           children: [
             {
               path: '',
               name: 'town_gov_home',
-              component: Town_gov_home,
+              component: () => import('../components/town_gov/overview.vue'),
             },
             {
               path: 'overview',
               name: 'town_overview',
-              component: Town_gov_overview,
+              component: () => import('../components/town_gov/overview.vue'),
             },
             {
               path: 'project',
               name: 'town_project',
-              component: Town_gov_project,
+              component: () => import('../components/town_gov/project.vue'),
             },
             {
               path: 'budget',
               name: 'town_budget',
-              component: Town_gov_budget,
+              component: () => import('../components/town_gov/budget.vue'),
             },
             ////{
             ///  path: 'contract',
@@ -92,27 +65,27 @@ const router = createRouter({
         {
           path: 'enterprise',
           name: 'enterprise',
-          component: Enterprise,
+          component: () => import('../components/enterprise/index.vue'),
           children: [
             {
               path: '',
               name: 'enterprise_home',
-              component: Enterprise_home,
+              component: () => import('../components/enterprise/overview.vue'),
             },
             {
               path: 'overview',
               name: 'enterprise_overview',
-              component: Enterprise_overview,
+              component: () => import('../components/enterprise/overview.vue'),
             },
             {
               path: 'project',
               name: 'enterprise_project',
-              component: Enterprise_project,
+              component: () => import('../components/enterprise/project.vue'),
             },
             {
               path: 'assets',
               name: 'enterprise_assets',
-              component: Enterprise_Assets,
+              component: () => import('../components/enterprise/Assets.vue'),
             },
             ////{
             ///  path: 'contract',
@@ -124,32 +97,32 @@ const router = createRouter({
         {
           path: 'county_gov',
           name: 'county_gov',
-          component: County_gov,
+          component: () => import('../components/county_gov/index.vue'),
           children: [
             {
               path: '',
               name: 'county_gov_home',
-              component: County_gov_home,
+              component: () => import('../components/county_gov/overview.vue'),
             },
             {
               path: 'overview',
               name: 'county_overview',
-              component: County_gov_overview,
+              component: () => import('../components/county_gov/overview.vue'),
             },
             {
               path: 'project',
               name: 'county_project',
-              component: County_gov_project,
+              component: () => import('../components/county_gov/project.vue'),
             },
             {
               path: 'budget',
               name: 'county_budget',
-              component: County_gov_budget,
+              component: () => import('../components/county_gov/budget.vue'),
             },
             {
               path: 'sub_gov',
               name: 'sub_gov',
-              component: County_gov_sub_gov,
+              component: () => import('../components/county_gov/sub_gov.vue'),
             }
             ////{
             ///  path: 'contract',
@@ -173,7 +146,7 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)',
       name: '404',
-      component: Error
+      component: () => import('../views/404.vue')
     }
   ]
 })
