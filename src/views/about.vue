@@ -15,7 +15,7 @@ const goToBackend = () => {
         type: 'warning',
     })
         .then(() => {
-            window.open('http://47.106.226.160:5000/')
+            window.open('http://localhost:5000/')
         })
 }
 const ResetUsers = () => {
